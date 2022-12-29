@@ -1,30 +1,101 @@
+<script setup lang="ts">
+import { RouterLink, RouterView, useRouter } from "vue-router";
+import { ref, provide } from "vue";
+
+/* provide */
+provide("vue-router", useRouter());
+
+/* data */
+const drawer = ref(true);
+const selectedRouter = 3;
+const groups: any = ref([
+  {
+    head: { name: "介绍", icon: "mdi-text-box-outline" },
+    items: [
+      { name: "JUI简介", to: "/introduction/brief/", active: true },
+      { name: "版本路线", to: "/introduction/version-map/" },
+    ],
+  },
+  {
+    head: { name: "快速入门", icon: "mdi-timer-outline", expand: true },
+    items: [
+      { name: "安装", to: "/getting-started/installation/" },
+      { name: "快速上手", to: "/getting-started/quick-start/" },
+      { name: "浏览器支持", to: "/getting-started/browser-support/" },
+    ],
+  },
+  {
+    head: { name: "特性", icon: "mdi-feather" },
+    items: [
+      { name: "国际化", to: "/features/i18n/" },
+      { name: "主题", to: "/features/theme/" },
+    ],
+  },
+  {
+    head: { name: "样式", icon: "mdi-palette-swatch-outline" },
+    items: [
+      { name: "海拔", to: "/styles/elevation/" },
+      { name: "颜色", to: "/styles/color/" },
+      { name: "文本", to: "/styles/text/" },
+      { name: "间距", to: "/styles/spacing/" },
+      { name: "弹性布局(Flex)", to: "/styles/flex/" },
+      { name: "边框(Border)", to: "/styles/border/" },
+      { name: "过渡动画", to: "/styles/transitions/" },
+    ],
+  },
+  {
+    head: { name: "组件", icon: "mdi-shape-outline" },
+    items: [
+      { name: "Lists(列表)", to: "/components/lists/" },
+      { name: "Paper(纸张)", to: "/components/paper/" },
+    ],
+  },
+  { head: { name: "指令", icon: "mdi-function-variant" }, items: [{}] },
+]);
+</script>
+
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <j-app id="app">
+    <j-container app>
+      <j-navigation-bar mini v-model="drawer">
+        <template v-slot:prepend>
+          <img
+            style="width: 255px"
+            src="https://www.jackiewongz.com/resources/blog_name_black.png"
+          />
+        </template>
+        <j-list nav>
+          <j-list-item-group mandatory v-model="selectedRouter">
+            <j-list-group
+              v-for="(group, group_id) in groups"
+              :key="group_id"
+              :prepend-icon="group.head.icon"
+              :title="group.head.name"
+              independent
+              v-model="group.head.expand"
+            >
+              <j-list-item
+                :active="item.active"
+                no-icon
+                :to="item.to"
+                v-for="(item, item_id) in group.items"
+                :key="item_id"
+              >
+                <j-list-item-content>{{ item.name }}</j-list-item-content>
+              </j-list-item>
+            </j-list-group>
+          </j-list-item-group>
+        </j-list>
+      </j-navigation-bar>
+      <j-container>
+        <j-app-bar>
+          <j-app-bar-nav-icon @click="drawer = !drawer"></j-app-bar-nav-icon>
+          <j-app-bar-title>JACKIE UI</j-app-bar-title>
+        </j-app-bar>
+        <j-main>
+          <router-view />
+        </j-main>
+      </j-container>
+    </j-container>
+  </j-app>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>

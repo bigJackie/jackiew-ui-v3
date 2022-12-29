@@ -1,0 +1,21 @@
+@include b(application) {
+  @include b(paper) {
+    box-sizing: border-box;
+
+    @include when(disabled) {
+    }
+
+    @include when(outlined) {
+    }
+
+    @include when(rounded) {
+      border-radius: 50%;
+    }
+    @include when(shaped) {
+    }
+
+    @include when(tile) {
+      border-radius: 0px !important;
+    }
+  }
+}

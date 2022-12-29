@@ -1,0 +1,26 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "vitepress docs for jackiew-ui",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue3",
+    "vitepress",
+    "ui"
+  ],
+  "author": "jackiewong",
+  "license": "ISC",
+  "dependencies": {
+    "@mdi/font": "^7.0.96",
+    "@types/markdown-it": "^12.2.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "shiki": "^0.11.1",
+    "vitepress": "^1.0.0-alpha.13",
+    "vue": "^3.2.38"
+  }
+}

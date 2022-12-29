@@ -1,56 +1,61 @@
 {
-  "name": "jackiew-ui-v3",
-  "version": "0.1.0",
-  "private": true,
+  "name": "jackiew-ui",
+  "version": "0.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
+    "build": "run-p type-check build-only",
+    "test:unit": "vitest --environment jsdom",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "build-only": "vite build",
+    "cz": "npm run log && git add . && git cz",
+    "dev": "vite",
+    "docs:build": "vitepress build docs",
+    "docs:dev": "npm run -C docs dev",
+    "docs:serve": "vitepress serve docs",
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
-    "cz": "npm run log && git add . && git cz"
+    "preview": "vite preview --port 4173",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "@mdi/font": "^7.0.96",
+    "pinia": "^2.0.21",
+    "right-pad": "^1.0.1",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-eslint": "~4.5.15",
-    "@vue/cli-plugin-router": "~4.5.15",
-    "@vue/cli-plugin-typescript": "~4.5.15",
-    "@vue/cli-plugin-unit-jest": "~4.5.15",
-    "@vue/cli-plugin-vuex": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "commitizen": "^4.2.5",
-    "commitlint": "^17.1.2",
-    "conventional-changelog-cli": "^2.2.2",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "husky": "^8.0.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5",
-    "vue-cli-plugin-commitlint": "^1.0.12",
-    "vue-jest": "^5.0.0-0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@types/jsdom": "^20.0.0",
+    "@types/node": "^16.11.56",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.0.2",
+    "@vue/tsconfig": "^0.1.3",
+    "commitizen": "^4.0.3",
+    "commitlint": "^8.2.0",
+    "conventional-changelog-cli": "^2.0.28",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "husky": "^3.0.9",
+    "jsdom": "^20.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.8",
+    "typescript": "~4.7.4",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1",
+    "vue-cli-plugin-commitlint": "~1.0.12",
+    "vue-tsc": "^0.40.6"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }

@@ -1,0 +1,18 @@
+$border-radius-items: (
+  0: "0px",
+  xs: "2px",
+  sm: "4px",
+  md: "8px",
+  lg: "16px",
+  xl: "24px",
+  pill: "9999px",
+  circle: "50%",
+);
+
+@include b(application) {
+  @each $name, $size in $border-radius-items {
+    .rounded-#{$name} {
+      border-radius: #{$size}px !important;
+    }
+  }
+}
