@@ -1,0 +1,7 @@
+{
+  "include": ["*.d.ts", "../packages/**/*"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".."
+  }
+}

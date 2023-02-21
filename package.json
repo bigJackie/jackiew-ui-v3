@@ -7,10 +7,14 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "docs:dev": "npm run -C docs dev",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
     "cz": "npm run log && git add . && git cz"
   },
   "dependencies": {
+    "@jackiew/atomcss": "file:../jackiew-css/dist",
     "vue": "^3.2.45",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.6"
