@@ -7,11 +7,11 @@ const props = defineProps({
 });
 
 /* computed */
-const w = computed(() => (isNaN(parseInt(props.width as string)) ? "256px" : `${parseInt(props.width as string)}px`));
+const width = computed(() => `${parseInt(<string>props.width)}px`);
 </script>
 
 <template>
-  <nav class="j-aside" :style="{ width: w }">
+  <aside class="j-aside" :style="{ width: width }">
     <slot></slot>
-  </nav>
+  </aside>
 </template>

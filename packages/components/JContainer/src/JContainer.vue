@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, useSlots } from "vue";
 
+/* data */
+const tags = ["JHeader", "JAppBar", "JFooter"];
+
 /* props */
 const props = defineProps({
   direction: String,
@@ -10,21 +13,12 @@ const props = defineProps({
 
 /* computed */
 const isVertical = computed(() => {
-  if (props.direction === "vertical") {
-    return true;
-  } else if (props.direction === "horizontal") {
-    return false;
-  } else {
-    if (props.direction != undefined) console.warn("Container方向类型错误");
-  }
+  if (props.direction === "vertical") return true;
 
-  if (!!useSlots().default) {
-    let children = useSlots().default!();
-    return children.some((vnode) => {
-      let tag = (vnode as any).type["__name"];
-      return tag === "JHeader" || tag === "JAppBar" || tag === "JFooter";
-    });
-  } else return false;
+  /* if slots has tag which in tags make container flex-direction to vertical*/
+  return !!useSlots().default
+    ? useSlots().default!().some(vnode => tags.some(tag => (<any>vnode).type["__name"] === tag))
+    : false;
 });
 </script>
 

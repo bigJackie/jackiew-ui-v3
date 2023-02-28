@@ -4,11 +4,13 @@
   "description": "jackiew-ui docs powered by vitepress",
   "scripts": {
     "dev": "vitepress dev .",
+    "build": "vitepress build .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "JackieWong",
   "license": "MIT",
   "devDependencies": {
+    "@jackiew/atomcss": "file:../../jackiew-css/dist",
     "@types/markdown-it": "^12.2.3",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",

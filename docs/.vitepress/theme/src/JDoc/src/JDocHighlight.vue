@@ -37,14 +37,14 @@ onMounted(() => {
 
   shiki
     .getHighlighter({
-      theme: "material-lighter",
+      theme: "vitesse-light",
     })
-    .then((highlighter) => {
+    .then(highlighter => {
       // let template = stripTemplate(decodeURIComponent(props.source!));
       let template = decodeURIComponent(props.source!);
       source.value = highlighter.codeToHtml(template, { lang: "html" });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 });
@@ -53,8 +53,7 @@ onUpdated(() => {
   emits(
     "highlight-height",
     `${
-      parseFloat(getComputedStyle(highlight.value!).height) +
-      2 * parseFloat(getComputedStyle(highlight.value!).padding)
+      parseFloat(getComputedStyle(highlight.value!).height) + 2 * parseFloat(getComputedStyle(highlight.value!).padding)
     }px`
   );
 });

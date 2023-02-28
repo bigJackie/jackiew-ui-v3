@@ -12,4 +12,11 @@ export default {
     app.component("JMain", JMain);
     app.component("JContainer", JContainer);
   },
+  components: {
+    JAside,
+    JFooter,
+    JHeader,
+    JMain,
+    JContainer,
+  },
 };

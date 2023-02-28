@@ -18,30 +18,25 @@ let last_scroll_top = undefined;
 
 /* watch */
 let t = {};
-watch(renderCount, (val) => {
+watch(renderCount, val => {
   if (!t.cleared && !!toc_item.value)
     t = new Timeout(() => {
       titles.length = 0;
-      toc_item.value.forEach((el) => {
-        const id = decodeURIComponent(
-          (el as HTMLAnchorElement).href!.split("#")[1]
-        );
+      toc_item.value.forEach(el => {
+        const id = decodeURIComponent((el as HTMLAnchorElement).href!.split("#")[1]);
         const title = document.getElementById(id)!.offsetTop;
         titles.push(title);
       });
-      console.log(t.clear);
       t.clear();
     }, 250);
 });
 
-watch(scroll_top, (val) => {
+watch(scroll_top, val => {
   if (!!last_scroll_top && !!toc_item.value) {
     if (val > last_scroll_top) {
-      if (val >= titles[active_toc + 1])
-        setActiveToc(toc_item.value[active_toc + 1], active_toc + 1);
+      if (val >= titles[active_toc + 1]) setActiveToc(toc_item.value[active_toc + 1], active_toc + 1);
     } else {
-      if (val <= titles[active_toc] && active_toc > 0)
-        setActiveToc(toc_item.value[active_toc - 1], active_toc - 1);
+      if (val <= titles[active_toc] && active_toc > 0) setActiveToc(toc_item.value[active_toc - 1], active_toc - 1);
     }
     if (active_toc == toc_item.value.length - 2) {
       if (client_height.value + val > titles[active_toc + 1])
@@ -82,9 +77,7 @@ function Timeout(fn, interval) {
 }
 function handleClick({ target: el }: Event) {
   const id = "#" + (el as HTMLAnchorElement).href!.split("#")[1].split("#")[1];
-  const heading = document.querySelector<HTMLAnchorElement>(
-    decodeURIComponent(id)
-  );
+  const heading = document.querySelector<HTMLAnchorElement>(decodeURIComponent(id));
   /*  */
   toc_item.value.findIndex((item, index) => {
     if (item == el) {
@@ -103,10 +96,7 @@ function scrollTo(index: number) {
 function setActiveToc(el, index: number) {
   active_toc = index;
   toc_marker.value.style.top = `${
-    el.offsetTop +
-    (parseFloat(getComputedStyle(el).height) -
-      parseFloat(getComputedStyle(toc_marker.value).height)) /
-      2
+    el.offsetTop + (parseFloat(getComputedStyle(el).height) - parseFloat(getComputedStyle(toc_marker.value).height)) / 2
   }px`;
 }
 </script>
@@ -122,26 +112,13 @@ function setActiveToc(el, index: number) {
 
       <nav aria-labelledby="doc-outline-aria-label">
         <ul>
-          <li
-            v-for="{ title, link, children } in page.headers"
-            class="j-outline-li"
-          >
-            <a
-              class="j-outline-link"
-              :href="link"
-              @click="handleClick"
-              ref="toc_item"
-            >
+          <li v-for="{ title, link, children } in page.headers" class="j-outline-li">
+            <a class="j-outline-link" :href="link" @click="handleClick" ref="toc_item">
               {{ title }}
             </a>
             <ul v-if="children">
               <li v-for="{ title, link } in children" class="j-outline-li">
-                <a
-                  class="j-outline-link"
-                  :href="link"
-                  @click="handleClick"
-                  ref="toc_item"
-                >
+                <a class="j-outline-link" :href="link" @click="handleClick" ref="toc_item">
                   {{ title }}
                 </a>
               </li>

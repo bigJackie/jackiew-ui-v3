@@ -7,11 +7,11 @@ const props = defineProps({
 });
 
 /* computed */
-const h = computed(() => (isNaN(parseInt(props.height as string)) ? "60px" : `${parseInt(props.height as string)}px`));
+const height = computed(() => `${parseInt(<string>props.height)}px`);
 </script>
 
 <template>
-  <div class="j-footer" :style="{ height: h }">
+  <footer class="j-footer" :style="{ height: height }">
     <slot></slot>
-  </div>
+  </footer>
 </template>

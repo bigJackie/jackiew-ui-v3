@@ -5,7 +5,7 @@ import { ref, provide } from "vue";
 import "vitepress/dist/client/theme-default/styles/base.css";
 
 /* data */
-const { page, theme } = useData();
+const { page, theme, localeIndex } = useData();
 const drawer = ref(true);
 const selectedRouter = 3;
 // const groups: any = ref([
@@ -53,7 +53,8 @@ const selectedRouter = 3;
 //   { head: { name: "指令", icon: "mdi-function-variant" }, items: [{}] },
 // ]);
 
-const groups = theme.value.sidebar;
+const groups = theme.value.sidebar[localeIndex.value];
+console.log(page.value.headers.length);
 
 /* provide */
 provide("vue-router", useRouter());
@@ -62,10 +63,10 @@ provide("vue-router", useRouter());
 <template>
   <!-- <Layout> -->
   <j-app id="app">
-    <!-- <j-container app>
+    <j-container app>
       <j-navigation-bar mini v-model="drawer">
         <template v-slot:prepend>
-          <img style="width: 255px" src="https://www.jackiewongz.com/resources/blog_name_black.png" />
+          <img style="width: 255px" src="http://share.jackiewongz.com/resources/blog_name_black.png" />
         </template>
         <j-list nav>
           <j-list-item-group mandatory v-model="selectedRouter">
@@ -103,10 +104,10 @@ provide("vue-router", useRouter());
         </j-list>
       </j-navigation-bar>
       <j-container>
-        <j-app-bar>
-          <j-app-bar-nav-icon @click="drawer = !drawer"></j-app-bar-nav-icon>
-          <j-app-bar-title>JACKIE UI</j-app-bar-title>
-        </j-app-bar>
+        <!-- <j-app-bar>
+            <j-app-bar-nav-icon @click="drawer = !drawer"></j-app-bar-nav-icon>
+            <j-app-bar-title>JACKIE UI</j-app-bar-title>
+          </j-app-bar> -->
         <j-main>
           <j-doc>
             <j-row>
@@ -114,13 +115,13 @@ provide("vue-router", useRouter());
                 <Content />
               </j-col>
               <j-col cols="0" :lg="page.headers.length > 0 ? 6 : 0" :xl="page.headers.length > 0 ? 5 : 0">
-                <j-doc-toc>aa</j-doc-toc>
+                <j-doc-toc></j-doc-toc>
               </j-col>
             </j-row>
           </j-doc>
         </j-main>
       </j-container>
-    </j-container> -->
+    </j-container>
   </j-app>
   <!-- </Layout> -->
 </template>

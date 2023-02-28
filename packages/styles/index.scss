@@ -1,0 +1,25 @@
+$footer-padding: 0 20px !default;
+$header-padding: 0 20px !default;
+
+$font-color: rgba(0, 0, 0, 0.54);
+$border-color: rgba(0, 0, 0, 0.12);
+$border-width: thin;
+$color-primary: #1867c0;
+$color-hover: #000000de;
+
+@import "./mixins/mixin.scss";
+
+@import "./themes/borderradius.scss";
+@import "./themes/breakpoints.scss";
+@import "./themes/elevation.scss";
+@import "./themes/flexbox.scss";
+// @import "./themes/color.scss";
+// @import "./themes/font.scss";
+
+@import "./container.scss";
+@import "./components/button.scss";
+@import "./components/navigationbar.scss";
+@import "./components/layout.scss";
+@import "./components/lists.scss";
+
+@import "./components/doc.scss";

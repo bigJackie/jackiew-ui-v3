@@ -7,11 +7,11 @@ const props = defineProps({
 });
 
 /* computed */
-const h = computed(() => (isNaN(parseInt(props.height as string)) ? "60px" : `${parseInt(props.height as string)}px`));
+const height = computed(() => `${parseInt(<string>props.height)}px`);
 </script>
 
 <template>
-  <div class="j-header" :style="{ height: h }">
+  <header class="j-header" :style="{ height: height }">
     <slot></slot>
-  </div>
+  </header>
 </template>

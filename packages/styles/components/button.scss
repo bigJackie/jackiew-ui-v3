@@ -1,0 +1,34 @@
+@include b(application) {
+  @include b(button) {
+    position: relative;
+    border-width: thin;
+    border-style: solid;
+    line-height: 14px;
+    padding: 8px 15px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    &:hover {
+      &::before {
+        transition: all ease-in-out 0.25s;
+        opacity: 1;
+      }
+    }
+
+    /* before */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all ease-in-out 0.25s;
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+}
