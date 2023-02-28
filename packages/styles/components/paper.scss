@@ -11,6 +11,7 @@
     @include when(rounded) {
       border-radius: 50%;
     }
+
     @include when(shaped) {
     }
 

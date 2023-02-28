@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@jackiew/atomcss": "file:../../jackiew-css/dist",
+    "@mdi/font": "^7.1.96",
     "@types/markdown-it": "^12.2.3",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",

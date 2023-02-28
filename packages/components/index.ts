@@ -1,5 +1,6 @@
 export * from "./Example";
 export * from "./JApp";
+export * from "./JAppBar";
 export * from "./JContainer";
 export * from "./JIcon";
 export * from "./JLayout";

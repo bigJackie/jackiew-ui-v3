@@ -4,6 +4,7 @@ import "../packages/styles";
 import type { App } from "vue";
 
 import JApp from "../packages/components/JApp";
+import JAppBar from "../packages/components/JAppBar";
 import JContainer from "../packages/components/JContainer";
 import JIcon from "../packages/components/JIcon";
 import JLayout from "../packages/components/JLayout";
@@ -15,7 +16,7 @@ import directives from "../packages/directives";
 /* Doc */
 import JDoc from "./.vitepress/theme/src/JDoc";
 
-const components = [JApp, JContainer, JIcon, JLayout, JList, JPaper, JNavigationBar, JDoc];
+const components = [JApp, JAppBar, JContainer, JIcon, JLayout, JList, JPaper, JNavigationBar, JDoc];
 
 const install = function (app: App) {
   components.map(component => {
@@ -30,6 +31,7 @@ const install = function (app: App) {
 export default {
   install,
   JApp,
+  JAppBar,
   JContainer,
   JIcon,
   JLayout,

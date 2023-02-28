@@ -7,16 +7,19 @@ $border-width: thin;
 $color-primary: #1867c0;
 $color-hover: #000000de;
 
+$app-bar-border-radius: 0 !default;
+$app-bar-elevation: 4 !default;
+$app-bar-scrolled-title-padding-bottom: 9px !default;
+
 @import "./mixins/mixin.scss";
 
 @import "./themes/borderradius.scss";
 @import "./themes/breakpoints.scss";
 @import "./themes/elevation.scss";
 @import "./themes/flexbox.scss";
-// @import "./themes/color.scss";
-// @import "./themes/font.scss";
 
-@import "./container.scss";
+@import "./components/container.scss";
+@import "./components/appbar.scss";
 @import "./components/button.scss";
 @import "./components/navigationbar.scss";
 @import "./components/layout.scss";

@@ -6,6 +6,7 @@ import JUI from "../../index";
 // import "./style.css";
 import type { Theme } from "vitepress";
 
+import "@mdi/font/css/materialdesignicons.css";
 // import "../../../packages/style/index.scss";
 import NotFound from "./src/NotFound.vue";
 
