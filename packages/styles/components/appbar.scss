@@ -22,7 +22,7 @@
 
   /* app-bar-title */
   @include b(app-bar-title) {
-    color: $font-color;
+    color: $color-on-background;
     display: flex;
     align-items: center;
     font-size: 20px;

@@ -1,17 +1,17 @@
 {
-  "hash": "06d34e2c",
-  "browserHash": "c4f337cc",
+  "hash": "a6ea4f18",
+  "browserHash": "51f78054",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "3cc95a9e",
+      "fileHash": "a12832c1",
       "needsInterop": false
     },
     "shiki": {
       "src": "../../../node_modules/shiki/dist/index.esm.js",
       "file": "shiki.js",
-      "fileHash": "5ea45a91",
+      "fileHash": "e377dbf2",
       "needsInterop": false
     }
   },

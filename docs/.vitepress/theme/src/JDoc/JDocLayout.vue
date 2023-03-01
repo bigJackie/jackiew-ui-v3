@@ -11,6 +11,7 @@ const selectedRouter = 3;
 
 const groups = theme.value.sidebar[localeIndex.value];
 console.log(page.value.headers.length);
+console.log(theme.value.sidebar, localeIndex.value);
 
 /* provide */
 provide("vue-router", useRouter());

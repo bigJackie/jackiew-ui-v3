@@ -15,7 +15,7 @@ const is_expanded = ref(false);
 const highlight = ref(null);
 const demo = ref();
 
-const heightHandler = (val) => {
+const heightHandler = val => {
   highlight_height.value = val;
 };
 
@@ -51,13 +51,8 @@ onUpdated(() => {
     <div class="j-component" :class="{ 'pa-0': !source }">
       <j-doc-demo :demo="demo"></j-doc-demo>
     </div>
-    <div
-      v-if="!!source"
-      class="j-doc-container-action flex flex-row justify-end"
-    >
-      <j-icon class="mr-2" @click="is_expanded = !is_expanded"
-        >mdi-code-tags</j-icon
-      >
+    <div v-if="!!source" class="j-doc-container-action flex flex-row justify-end items-center">
+      <j-icon class="mr-8" @click="is_expanded = !is_expanded">mdi-code-tags</j-icon>
     </div>
     <div
       v-if="!!source"
@@ -66,11 +61,7 @@ onUpdated(() => {
       :style="{ '--highlight--height': highlight_height }"
     >
       <div class="highlight" ref="highlight">
-        <j-doc-highlight
-          @highlight-height="heightHandler"
-          v-bind="$attrs"
-          :source="source"
-        ></j-doc-highlight>
+        <j-doc-highlight @highlight-height="heightHandler" v-bind="$attrs" :source="source"></j-doc-highlight>
       </div>
     </div>
     <div
@@ -78,7 +69,7 @@ onUpdated(() => {
       class="j-doc-container-action-sticky flex-row justify-center"
       :class="{ flex: is_expanded }"
     >
-      <button class="flex align-center" @click="is_expanded = !is_expanded">
+      <button class="flex items-center" @click="is_expanded = !is_expanded">
         隐藏代码
         <j-icon>mdi-menu-up</j-icon>
       </button>

@@ -24,7 +24,7 @@
     @include b(toc-link) {
       display: inline-block;
       text-justify: center;
-      color: $font-color;
+      color: $color-on-background;
       font-size: 14px;
     }
 

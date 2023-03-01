@@ -1,8 +1,27 @@
 {
   "name": "jackiew-ui-v3",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/jackiew-ui.umd.js",
+  "module": "dist/jackiew-ui.es.js",
+  "style": "dist/style.css",
+  "author": "JackieWong",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/jackiew-ui.es.js",
+      "require": "./dist/jackiew-ui.umd.js"
+    },
+    "./*": "./*"
+  },
+  "keywords": [
+    "vue3",
+    "vite",
+    "component",
+    "ui",
+    "typescript"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",

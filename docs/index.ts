@@ -9,14 +9,15 @@ import JContainer from "../packages/components/JContainer";
 import JIcon from "../packages/components/JIcon";
 import JLayout from "../packages/components/JLayout";
 import JList from "../packages/components/JList";
-import JPaper from "../packages/components/JPaper";
 import JNavigationBar from "../packages/components/JNavigationBar";
+import JPaper from "../packages/components/JPaper";
+
 import directives from "../packages/directives";
 
 /* Doc */
 import JDoc from "./.vitepress/theme/src/JDoc";
 
-const components = [JApp, JAppBar, JContainer, JIcon, JLayout, JList, JPaper, JNavigationBar, JDoc];
+const components = [JApp, JAppBar, JContainer, JIcon, JLayout, JList, JNavigationBar, JPaper, JDoc];
 
 const install = function (app: App) {
   components.map(component => {
@@ -36,9 +37,7 @@ export default {
   JIcon,
   JLayout,
   JList,
-  JPaper,
   JNavigationBar,
+  JPaper,
   JDoc,
 };
-
-// export { JApp, JContainer };

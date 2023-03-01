@@ -39,14 +39,8 @@ const max: number | string | undefined = inject("list-item-max", undefined);
 const activable: boolean = inject("list-item-activable", false); // 是否能激活
 const group_id: Ref<number> | undefined = inject("list-item-idx", undefined); // 是否能激活
 const which_active: Ref<number> = inject("list-item-active", ref(-1)); // 是否能激活
-const list_item_height: Ref<number> | undefined = inject(
-  "list-item-height",
-  undefined
-); // 组件高度
-const is_disabled: Ref<boolean> = inject(
-  "list-group-disabled",
-  ref(props.disabled)
-); // 是否禁用
+const list_item_height: Ref<number> | undefined = inject("list-item-height", undefined); // 组件高度
+const is_disabled: Ref<boolean> = inject("list-group-disabled", ref(props.disabled)); // 是否禁用
 
 /* methods */
 // 初始化 使用 provide & inject 将list-item组件高度传回list-group
@@ -71,8 +65,7 @@ function activate() {
     which_active.value = idx;
   }
   if (!!props.to && !!router) {
-    if (!!router.replace || !!router.push)
-      props.replace ? router.replace(props.to) : router.push(props.to);
+    if (!!router.replace || !!router.push) props.replace ? router.replace(props.to) : router.push(props.to);
     else router.go(props.to);
   }
 }
@@ -96,7 +89,7 @@ onMounted(() => {
   <component
     :is="tag"
     ref="item"
-    class="j-list-item flex justify-start align-center"
+    class="j-list-item flex justify-start items-center"
     :class="{
       'is-link': link || to,
       'is-no-icon': noIcon,

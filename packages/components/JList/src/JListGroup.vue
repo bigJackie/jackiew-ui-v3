@@ -45,23 +45,14 @@ provide("list-group-idx", idxs); //子组件id
 provide("list-item-height", content_height); //容器高度
 
 /* inject */
-const is_disabled: Ref<boolean> = inject(
-  "list-group-disabled",
-  ref(props.disabled)
-); //父组件是否禁用
+const is_disabled: Ref<boolean> = inject("list-group-disabled", ref(props.disabled)); //父组件是否禁用
 const expand_id: Ref<number> = inject("list-group-expand", ref(0)); //group组当前展开
 const parent_type: string = inject("list-group-type", "none"); //父组件类型
 const group_id: Ref<number> = inject("list-group-idx", ref(0)); //子组件id
-const list_item_height: Ref<number> | undefined =
-  parent_type == "group" ? inject("list-item-height")! : undefined; //容器高度
-const isParentExpanded: Ref<boolean> =
-  parent_type == "group" ? inject("list-group-expanded")! : ref(true); //父容器是否展开
+const list_item_height: Ref<number> | undefined = parent_type == "group" ? inject("list-item-height")! : undefined; //容器高度
+const isParentExpanded: Ref<boolean> = parent_type == "group" ? inject("list-group-expanded")! : ref(true); //父容器是否展开
 autoFold.value =
-  parent_type == "group"
-    ? props.autoFold
-      ? true
-      : (inject("list-group-auto-fold")! as any).value
-    : props.autoFold; //自动折叠
+  parent_type == "group" ? (props.autoFold ? true : (inject("list-group-auto-fold")! as any).value) : props.autoFold; //自动折叠
 
 /* methods */
 // 初始化
@@ -108,17 +99,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="group"
-    class="j-list-group flex flex-column"
-    :style="{ '--content-height': `${content_height}px` }"
-  >
+  <div ref="group" class="j-list-group flex flex-col" :style="{ '--content-height': `${content_height}px` }">
     <!-- head -->
-    <div
-      class="j-list-item__head"
-      v-if="$slots.head"
-      @click="isExpanded ? fold() : expand()"
-    >
+    <div class="j-list-item__head" v-if="$slots.head" @click="isExpanded ? fold() : expand()">
       <slot name="head"></slot>
     </div>
 
@@ -131,27 +114,19 @@ onMounted(() => {
       v-else
       @click="isExpanded ? fold() : expand()"
     >
-      <j-list-item-icon v-show="prependIcon">{{
-        prependIcon
-      }}</j-list-item-icon>
+      <j-list-item-icon v-show="prependIcon">{{ prependIcon }}</j-list-item-icon>
 
       <j-list-item-content>
         <j-list-item-title v-show="title">{{ title }}</j-list-item-title>
       </j-list-item-content>
 
-      <j-list-item-icon
-        class="j-list-group-icon__append"
-        :class="{ 'is-expand': isExpanded }"
-        v-show="appendIcon"
-        >{{ appendIcon }}</j-list-item-icon
-      >
+      <j-list-item-icon class="j-list-group-icon__append" :class="{ 'is-expand': isExpanded }" v-show="appendIcon">
+        {{ appendIcon }}
+      </j-list-item-icon>
     </j-list-item>
 
     <!-- content -->
-    <div
-      class="j-list-group__content"
-      :class="{ 'is-expand': isExpanded, 'is-disabled': is_disabled }"
-    >
+    <div class="j-list-group__content" :class="{ 'is-expand': isExpanded, 'is-disabled': is_disabled }">
       <slot></slot>
     </div>
   </div>

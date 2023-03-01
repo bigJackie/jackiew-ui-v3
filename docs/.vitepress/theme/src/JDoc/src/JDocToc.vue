@@ -3,7 +3,7 @@ import { ref, inject, watch, onMounted } from "vue";
 import { useData } from "vitepress";
 
 /* data */
-const { page, theme } = useData();
+const { page, theme, localeIndex } = useData();
 const toc_marker = ref();
 const toc_item = ref();
 const titles: number[] = [];
@@ -107,7 +107,7 @@ function setActiveToc(el, index: number) {
       <div class="j-outline-marker" ref="toc_marker" />
 
       <div class="j-outline-title">
-        {{ theme.outlineTitle || "On this page" }}
+        {{ theme.outlineTitle[localeIndex] || "On this page" }}
       </div>
 
       <nav aria-labelledby="doc-outline-aria-label">

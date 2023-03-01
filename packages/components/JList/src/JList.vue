@@ -36,7 +36,7 @@ onMounted(() => {});
 <template>
   <j-paper
     v-bind="$attrs"
-    class="j-list flex flex-column"
+    class="j-list flex flex-col"
     :class="[
       {
         'is-dense': dense,

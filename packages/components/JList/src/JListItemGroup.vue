@@ -33,7 +33,7 @@ provide("list-item-multiple", props.multiple);
 provide("list-item-max", props.max);
 </script>
 <template>
-  <component :is="tag" class="j-list-item-group flex flex-column">
+  <component :is="tag" class="j-list-item-group flex flex-col">
     <slot></slot>
   </component>
 </template>

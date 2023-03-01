@@ -1,128 +1,18 @@
-<div align="center">
+# Vue 3 + TypeScript + Vite
 
-# Jackie-UI
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-<div>
+## Recommended IDE Setup
 
-[![](https://img.shields.io/badge/license-MIT-violet.svg)](https://champyin.com)
-[![](https://img.shields.io/badge/package-NPM-blueviolet.svg)](https://champyin.com)
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-</div>
+## Type Support For `.vue` Imports in TS
 
-A UI Toolkit for Web-Apps Based On Vue.js 3.
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-</div>
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-## Introduction
-
-Jackie-UI is not only support perfectly on computers but also on cell phones.
-
-> It just a personal project for practice and study.
-
-For more information, please refer our [documentation](https://ui.jakciewongz.com/).
-
-## Features
-
-- 🌈 Self-designed interaction language and visual style.
-- 📦 Out-of-the-box, high-quality `Vue` components.
-- 🥇 Developed in `TypeScript` and `Scss`.
-- ☀️ Friendly API.
-- 🎨 Sophisticated, beautiful UI.
-- 📓 With clear demo site and detailed documentation.
-
-## TODO
-
-<details><summary>Features</summary>
-<p>
-
-- [x] AtomCss
-- [x] Internationalization
-- [ ] Theme
-
-</p>
-</details>
-
-<details><summary>Components</summary>
-<p>
-
-- Normal
-
-  - [ ] Avatar
-  - [ ] Badge
-  - [x] Button
-  - [x] Card
-  - [ ] Carousel
-  - [ ] Divider
-  - [x] Icon
-  - [ ] Image
-  - [x] List
-  - [ ] Menu
-  - [ ] Paper
-
-- Feedback
-
-  - [ ] Alert
-  - [ ] Dialog
-  - [ ] Tooltip
-
-- From
-
-  - [ ] Auto Complete
-  - [ ] Check Box
-  - [ ] Radio
-  - [ ] Rate
-  - [ ] Select
-  - [ ] Slider
-  - [ ] Switch
-  - [ ] Upload
-
-- Layout
-
-  - [x] Application
-  - [ ] Grid
-  - [x] Layout
-
-- Navigation
-
-  - [x] App Bar
-  - [x] Navigation Bar
-  - [ ] Pagination
-        ...
-
-</p>
-</details>
-
-## install
-
-```javascript
-npm install jackiew-ui-v3
-```
-
-## Quick Start
-
-```javascript
-import JUI from "jackiew-ui";
-import "jackiew-ui/jui.css";
-Vue.use(JUI);
-
-// or
-import {
-  JAppBar,
-  JButton,
-  // ...
-} from "jackiew-ui";
-Vue.component(JAppBar.name, JAppBar);
-Vue.component(JButton.name, JButton);
-```
-
-## Browser Support
-
-| `<img src="https://github.com/zhubeijia/source/blob/main/srclogo/icon-edge.06c7aa18.svg?raw=true" width="20px">`Edge | `<img src="https://github.com/zhubeijia/source/blob/main/srclogo/icon-chrome.99f0b30c.svg?raw=true" width="20px">`Chrome | `<img src="https://github.com/zhubeijia/source/blob/main/srclogo/icon-safari.1bf88a3e.svg?raw=true" width="20px">`Safari |
-| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| Edge                                                                                                                 | Last two versions                                                                                                        | Last two versions                                                                                                        |
-
-## LICENSE
-
-[GPL-3.0](LICENSE)
-
-Looking forward to your suggestion!!
+1. Disable the built-in TypeScript Extension
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.

@@ -1,22 +1,112 @@
 $footer-padding: 0 20px !default;
 $header-padding: 0 20px !default;
 
-$font-color: rgba(0, 0, 0, 0.54);
 $border-color: rgba(0, 0, 0, 0.12);
 $border-width: thin;
-$color-primary: #1867c0;
-$color-hover: #000000de;
 
 $app-bar-border-radius: 0 !default;
 $app-bar-elevation: 4 !default;
 $app-bar-scrolled-title-padding-bottom: 9px !default;
+
+:root {
+  --j-theme-primary: #6750a4;
+  --j-theme-on-primary: #ffffff;
+  --j-theme-primary-container: #eaddff;
+  --j-theme-on-primary-container: #21005d;
+
+  --j-theme-secondary: #625b71;
+  --j-theme-on-secondary: #ffffff;
+  --j-theme-secondary-container: #e8def8;
+  --j-theme-on-secondary-container: #1d192b;
+
+  --j-theme-tertiary: #7d5260;
+  --j-theme-on-tertiary: #ffffff;
+  --j-theme-tertiary-container: #ffd8e4;
+  --j-theme-on-tertiary-container: #31111d;
+
+  --j-theme-error: #b3261e;
+  --j-theme-on-error: #ffffff;
+  --j-theme-error-container: #f9dedc;
+  --j-theme-on-error-container: #410e0b;
+
+  --j-theme-background: #fffbfe;
+  --j-theme-on-background: #1c1b1f;
+  --j-theme-surface: #fffbfe;
+  --j-theme-on-surface: #1c1b1f;
+
+  --j-theme-outline: #79747e;
+  --j-theme-surface-variant: #e7e0ec;
+  --j-theme-on-surface-variant: #49454f;
+}
+
+.dark {
+  --j-theme-primary: #d0bcff;
+  --j-theme-on-primary: #381e72;
+  --j-theme-primary-container: #4f378b;
+  --j-theme-on-primary-container: #eaddff;
+
+  --j-theme-secondary: #ccc2dc;
+  --j-theme-on-secondary: #332d41;
+  --j-theme-secondary-container: #4a4458;
+  --j-theme-on-secondary-container: #e8def8;
+
+  --j-theme-tertiary: #efb8c8;
+  --j-theme-on-tertiary: #492532;
+  --j-theme-tertiary-container: #633b48;
+  --j-theme-on-tertiary-container: #ffd8e4;
+
+  --j-theme-error: #f2b8b5;
+  --j-theme-on-error: #601410;
+  --j-theme-error-container: #601410;
+  --j-theme-on-error-container: #f9dedc;
+
+  --j-theme-background: #1c1b1f;
+  --j-theme-on-background: #e6e1e5;
+  --j-theme-surface: #1c1b1f;
+  --j-theme-on-surface: #e6e1e5;
+
+  --j-theme-outline: #938f99;
+  --j-theme-surface-variant: #49454f;
+  --j-theme-on-surface-variant: #cac4d0;
+}
+
+$color-primary: var(--j-theme-primary);
+$color-on-primary: var(--j-theme-on-primary);
+$color-primary-container: var(--j-theme-primary-container);
+$color-on-primary-container: var(--j-theme-on-primary-container);
+
+$color-secondary: var(--j-theme-secondary);
+$color-on-secondary: var(--j-theme-on-secondary);
+$color-secondary-container: var(--j-theme-secondary-container);
+$color-on-secondary-container: var(--j-theme-on-secondary-container);
+
+$color-tertiary: var(--j-theme-tertiary);
+$color-on-tertiary: var(--j-theme-on-tertiary);
+$color-tertiary-container: var(--j-theme-tertiary-container);
+$color-on-tertiary-container: var(--j-theme-on-tertiary-container);
+
+$color-error: var(--j-theme-error);
+$color-on-error: var(--j-theme-on-error);
+$color-error-container: var(--j-theme-error-container);
+$color-on-error-container: var(--j-theme-on-error-container);
+
+$color-background: var(--j-theme-background);
+$color-on-background: var(--j-theme-on-background);
+$color-surface: var(--j-theme-surface);
+$color-on-surface: var(--j-theme-on-surface);
+
+$color-outline: var(--j-theme-outline);
+$color-surface-variant: var(--j-theme-surface-variant);
+$color-on-surface-variant: var(--j-theme-on-surface-variant);
+
+$color-hover: var(--j-theme-on-background);
 
 @import "./mixins/mixin.scss";
 
 @import "./themes/borderradius.scss";
 @import "./themes/breakpoints.scss";
 @import "./themes/elevation.scss";
-@import "./themes/flexbox.scss";
+// @import "./themes/flexbox.scss";
 
 @import "./components/container.scss";
 @import "./components/appbar.scss";

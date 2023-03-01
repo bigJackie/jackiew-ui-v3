@@ -6,8 +6,8 @@
     code {
       font-size: 16px;
       line-height: 24px;
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace;
     }
   }
   /* doc */
@@ -127,7 +127,7 @@
   }
 
   a:hover {
-    color: #33a06f;
+    color: $color-primary;
   }
 
   ul,
@@ -235,10 +235,7 @@
       border-width: $border-width 0 0 0;
       border-style: solid;
       border-color: $border-color;
-      border-radius: 0 0 #{map-get($border-radius-items, "md")} #{map-get(
-          $border-radius-items,
-          "md"
-        )} !important;
+      border-radius: 0 0 #{map-get($border-radius-items, "md")} #{map-get($border-radius-items, "md")} !important;
       height: 40px;
     }
   }
@@ -276,9 +273,8 @@
       z-index: 0;
       width: 5px;
       height: 18px;
-      background-color: #33a06f;
-      transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s,
-        opacity 0.25s;
+      background-color: $color-primary;
+      transition: top 0.25s cubic-bezier(0, 1, 0.5, 1), background-color 0.5s, opacity 0.25s;
       border-radius: #{map-get($border-radius-items, "lg")};
     }
 

@@ -1,18 +1,11 @@
 <template>
   <j-container>
     <j-row>
-      <j-col
-        class="pa-3"
-        v-for="elevation in elevations"
-        :key="elevation"
-        cols="24"
-        lg="12"
-        xl="6"
-      >
+      <j-col class="pa-3" v-for="elevation in elevations" :key="elevation" cols="24" lg="12" xl="6">
         <j-paper class="pa-12 flex" color="grey-300">
           <j-paper
             :elevation="elevation"
-            class="mx-auto flex align-center justify-center"
+            class="mx-auto flex items-center justify-center"
             height="100"
             width="100"
             color="white"

@@ -83,7 +83,7 @@
     /* list-item-subtitle */
     @include b(list-item-subtitle) {
       font-size: 14px;
-      color: $font-color;
+      color: $color-on-background;
       font-weight: 400;
     }
 

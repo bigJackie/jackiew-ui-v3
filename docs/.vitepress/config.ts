@@ -5,6 +5,14 @@ import { mdPlugin } from "./config/plugins";
 export default {
   title: "Jackiew UI",
   cleanUrls: "without-subfolders",
+  rewrites: {
+    "en-US/introduction/:page": "introduction/:page*",
+    "en-US/getting-started/:page": "getting-started/:page*",
+    "en-US/features/:page": "features/:page*",
+    "en-US/styles/:page": "styles/:page*",
+    "en-US/components/:page": "components/:page*",
+    "en-US/directives/:page": "directives/:page*",
+  },
   themeConfig: themeConfig,
   markdown: {
     config: md => mdPlugin(md),

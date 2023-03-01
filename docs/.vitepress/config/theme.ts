@@ -4,7 +4,7 @@ export const themeConfig = {
   // sidebar
   sidebar: {
     // en-US
-    "/": [
+    root: [
       {
         text: "Introduction",
         items: [
@@ -110,32 +110,32 @@ export const themeConfig = {
           },
           { text: "Grid", link: "/components/grid" },
           { text: "Image", link: "/components/image" },
-          { text: "List", link: "/components/paper" },
+          { text: "List", link: "/components/list" },
           { text: "Menu", link: "/components/menu" },
           { text: "Pagination", link: "/components/pagination" },
-          { text: "Paper", link: "/components/list" },
-          {
-            text: "Picker",
-            items: [
-              {
-                text: "Color picker",
-                link: "/components/color-picker",
-              },
-              {
-                text: "Date picker",
-                link: "/components/date-control",
-              },
-              {
-                text: "Time picker",
-                link: "/components/time-control",
-              },
-            ],
-          },
-          { text: "Progress", link: "/components/progress" },
-          { text: "Scrollbar", link: "/components/scrollbar" },
-          { text: "Tab", link: "/components/tab" },
-          { text: "Tag", link: "/components/tag" },
-          { text: "Tooltip", link: "/components/tooltip" },
+          { text: "Paper", link: "/components/paper" },
+          // {
+          //   text: "Picker",
+          //   items: [
+          //     {
+          //       text: "Color picker",
+          //       link: "/components/color-picker",
+          //     },
+          //     {
+          //       text: "Date picker",
+          //       link: "/components/date-control",
+          //     },
+          //     {
+          //       text: "Time picker",
+          //       link: "/components/time-control",
+          //     },
+          //   ],
+          // },
+          // { text: "Progress", link: "/components/progress" },
+          // { text: "Scrollbar", link: "/components/scrollbar" },
+          // { text: "Tab", link: "/components/tab" },
+          // { text: "Tag", link: "/components/tag" },
+          // { text: "Tooltip", link: "/components/tooltip" },
         ],
         icon: "mdi-shape-outline",
       },
@@ -146,9 +146,9 @@ export const themeConfig = {
         items: [
           {
             text: "Click outside",
-            link: "/zh-CN/directives/v-click-outside",
+            link: "/directives/v-click-outside",
           },
-          { text: "Wave", link: "/zh-CN/directives/v-wave" },
+          { text: "Wave", link: "/directives/v-wave" },
         ],
         icon: "mdi-function-variant",
       },
@@ -208,7 +208,7 @@ export const themeConfig = {
         items: [
           { text: "提示框（Alert）", link: "/zh-CN/components/alert" },
           {
-            text: "应用程序（Application）",
+            text: "应用布局（Application Layout）",
             link: "/zh-CN/components/application",
           },
           { text: "头像（Avatar）", link: "/zh-CN/components/avatar" },
@@ -268,31 +268,31 @@ export const themeConfig = {
             link: "/zh-CN/components/pagination",
           },
           { text: "纸张（Paper）", link: "/zh-CN/components/paper" },
-          {
-            text: "选择器",
-            items: [
-              {
-                text: "颜色选择器(Color（picker）",
-                link: "/zh-CN/components/color-picker",
-              },
-              {
-                text: "日期选择器(Date（picker）",
-                link: "/zh-CN/components/date-control",
-              },
-              {
-                text: "时间选择器(Time（picker）",
-                link: "/zh-CN/components/time-control",
-              },
-            ],
-          },
-          { text: "进度条（Progress）", link: "/zh-CN/components/progress" },
-          {
-            text: "滚动条（Scrollbar）",
-            link: "/zh-CN/components/scrollbar",
-          },
-          { text: "选项卡（Tab）", link: "/zh-CN/components/tab" },
-          { text: "标签（Tag）", link: "/zh-CN/components/tag" },
-          { text: "提示（Tooltip）", link: "/zh-CN/components/tooltip" },
+          // {
+          //   text: "选择器",
+          //   items: [
+          //     {
+          //       text: "颜色选择器(Color（picker）",
+          //       link: "/zh-CN/components/color-picker",
+          //     },
+          //     {
+          //       text: "日期选择器(Date（picker）",
+          //       link: "/zh-CN/components/date-control",
+          //     },
+          //     {
+          //       text: "时间选择器(Time（picker）",
+          //       link: "/zh-CN/components/time-control",
+          //     },
+          //   ],
+          // },
+          // { text: "进度条（Progress）", link: "/zh-CN/components/progress" },
+          // {
+          //   text: "滚动条（Scrollbar）",
+          //   link: "/zh-CN/components/scrollbar",
+          // },
+          // { text: "选项卡（Tab）", link: "/zh-CN/components/tab" },
+          // { text: "标签（Tag）", link: "/zh-CN/components/tag" },
+          // { text: "提示（Tooltip）", link: "/zh-CN/components/tooltip" },
         ],
         icon: "mdi-shape-outline",
       },
@@ -311,64 +311,68 @@ export const themeConfig = {
       },
     ],
   },
-
-  locales: {
-    "/": {
-      // navbar
-      outlineTitle: "Contents",
-      nav: [
-        {
-          text: "Translations",
-          items: [{ text: "Chinese", link: "/zh-CN/" }],
-        },
-        {
-          text: "1.0.0-beta",
-          items: [],
-        },
-      ],
-
-      socialLinks: [
-        {
-          icon: "github",
-          link: "https://github.com/bigJackie/jackiew-ui-v3",
-        },
-      ],
-
-      footer: {
-        message: "Released under the GPL-3.0-or-later License.",
-        copyright: "Copyright © 2022-present Jackie Wong",
-      },
-    },
-
-    "/zh-CN/": {
-      outlineTitle: "目录",
-      // navbar
-      nav: [
-        {
-          text: "多语言",
-          items: [{ text: "英文", link: "/" }],
-        },
-        {
-          text: "1.0.0-beta",
-          items: [],
-        },
-      ],
-
-      // sidebar
-      sidebar: [],
-
-      socialLinks: [
-        {
-          icon: "github",
-          link: "https://github.com/bigJackie/jackiew-ui-v3",
-        },
-      ],
-      footer: {
-        message: "Released under the GPL-3.0-or-later License.",
-        copyright: "Copyright © 2022-present Jackie Wong",
-      },
-    },
+  outlineTitle: {
+    "/": "Contents",
+    "zh-CN": "目录",
   },
+
+  // locales: {
+  //   "/": {
+  //     // navbar
+  //     outlineTitle: "Contents",
+  //     nav: [
+  //       {
+  //         text: "Translations",
+  //         items: [{ text: "Chinese", link: "/zh-CN/" }],
+  //       },
+  //       {
+  //         text: "1.0.0-beta",
+  //         items: [],
+  //       },
+  //     ],
+
+  //     socialLinks: [
+  //       {
+  //         icon: "github",
+  //         link: "https://github.com/bigJackie/jackiew-ui-v3",
+  //       },
+  //     ],
+
+  //     footer: {
+  //       message: "Released under the GPL-3.0-or-later License.",
+  //       copyright: "Copyright © 2022-present Jackie Wong",
+  //     },
+  //   },
+
+  //   "/zh-CN/": {
+  //     outlineTitle: "目录",
+  //     // navbar
+  //     nav: [
+  //       {
+  //         text: "多语言",
+  //         items: [{ text: "英文", link: "/" }],
+  //       },
+  //       {
+  //         text: "1.0.0-beta",
+  //         items: [],
+  //       },
+  //     ],
+
+  //     // sidebar
+  //     sidebar: [],
+
+  //     socialLinks: [
+  //       {
+  //         icon: "github",
+  //         link: "https://github.com/bigJackie/jackiew-ui-v3",
+  //       },
+  //     ],
+  //     footer: {
+  //       message: "Released under the GPL-3.0-or-later License.",
+  //       copyright: "Copyright © 2022-present Jackie Wong",
+  //     },
+  //   },
+  // },
 };
 
 // editLink: {

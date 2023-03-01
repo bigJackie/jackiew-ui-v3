@@ -15,6 +15,14 @@
     // overflow: hidden;
   }
 
+  $flex-size-breakpoints: (
+    undefined: "",
+    xs: "xs-",
+    sm: "sm-",
+    md: "md-",
+    lg: "lg-",
+    xl: "xl-",
+  );
   @for $i from 0 through 24 {
     @each $size_name, $size_item in $flex-size-breakpoints {
       @media only screen and (max-width: getBreakPoint($size_name)) and (min-width: getBreakPointSmall($size_name)) {
