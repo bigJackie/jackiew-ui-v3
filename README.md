@@ -23,12 +23,12 @@ For more information, please refer our [documentation](https://ui.jackiewongz.co
 
 ## Features
 
-- 🌈 Self-designed interaction language and visual style.
-- 📦 Out-of-the-box, high-quality `Vue` components.
-- 🥇 Developed in `TypeScript` and `Scss`.
-- ☀️ Friendly API.
-- 🎨 Sophisticated, beautiful UI.
-- 📓 With clear demo site and detailed documentation.
+- 🌈 Self-designed interaction language and visual style
+- 📦 Out-of-the-box, high-quality `Vue` components
+- 🥇 Developed in `TypeScript` and `Scss`
+- ☀️ Friendly API
+- 🎨 Sophisticated, beautiful UI
+- 📓 With clear demo site and detailed documentation
 
 ## TODO
 
@@ -87,7 +87,6 @@ For more information, please refer our [documentation](https://ui.jackiewongz.co
   - [x] App Bar
   - [x] Navigation Bar
   - [ ] Pagination
-        ...
 
 </p>
 </details>
@@ -123,6 +122,6 @@ Vue.component(JButton.name, JButton);
 
 ## LICENSE
 
-[GPL-3.0](LICENSE)
+MIT License &copy; 2022 [JackieWong](https://github.com/bigJackie)
 
 Looking forward to your suggestion!!
